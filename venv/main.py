@@ -1,4 +1,4 @@
-from creds import *
+from creds import * #your credentials
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
