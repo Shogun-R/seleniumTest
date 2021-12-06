@@ -17,7 +17,7 @@ control = pyautogui
 
 print(control._pyautogui_win._size())
 print(control.position())
-control.moveTo(630, 145)
+control.moveTo(910, 145)
 try:
     browser.get('https://typistapp.ca/#/home')
     browser.implicitly_wait(30)
@@ -27,11 +27,13 @@ try:
     browser.find_element_by_class_name('submit').click()
     time.sleep(15)
     control.click()
+    time.sleep(5)
+    control.press('SPACE')
     print(debug)
     #wait.until(EC.element_to_be_clickable(('/a[contains(text(),"Lessons"]'))).click()
     #browser.find_element_by_xpath('//a[contains(@href,"#/level/1"]').click()
     print(debug0)
-    browser.find_element_by_xpath('//a[contains(@href,"#/level/1"]').click()
+    print(browser.find_element_by_id('text-to-type'))
     print(debug1)
 
 
