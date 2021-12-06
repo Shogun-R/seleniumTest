@@ -33,7 +33,7 @@ try:
     #wait.until(EC.element_to_be_clickable(('/a[contains(text(),"Lessons"]'))).click()
     #browser.find_element_by_xpath('//a[contains(@href,"#/level/1"]').click()
     print(debug0)
-    print(browser.find_element_by_id('text-to-type'))
+    print(browser.find_elements_by_id('TypingInput.showLine($index)'))
     print(debug1)
 
 
