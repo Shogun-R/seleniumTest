@@ -46,9 +46,9 @@ try:
         print(element.text)
         text_list = [element.text]
         test_text = text_list[0]
-        control.press('{}'.format(test_text))
-        print(text_list)
-        print('{}'.format(test_text))
+        print('this is the len: ' + f'{sum(len(i) for i in text_list)}')
+        print('this is the text_list[0]: ' + f'{text_list[0]}')
+        print(f'{test_text}')
         print('debug1')
 
 
