@@ -7,6 +7,12 @@ from selenium.webdriver.support import expected_conditions as EC
 import pyautogui
 import time
 
+def button_press(button):
+    #button.lower()
+    inline_control = pyautogui
+    inline_control.press(button)
+
+
 PATH = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'
 debug = 10
 debug0 = debug + 5
@@ -37,7 +43,16 @@ try:
     print(debug1)
 
     for element in browser.find_elements_by_id('text-to-type'):
-        print(element.text)
+        print('debug0')
+        time.sleep(0.5)
+        print('debug1')
+        button_press(element.text)
+
+        #text_to_print = '' + element.text
+        #text_to_print.lower()
+        #control.press(text_to_print)
 
 except NoSuchElementException:
     pass
+
+
