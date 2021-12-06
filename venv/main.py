@@ -7,9 +7,12 @@ from selenium.webdriver.support import expected_conditions as EC
 import pyautogui
 import time
 
-def button_press(button):
+def button_press(list = []):
+    total_len = sum(len(i) for i in list)
     inline_control = pyautogui
-    inline_control.press(button)
+    for cycle in total_len:
+        button = list[cycle]
+        inline_control.press(button)
 
 
 PATH = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'
