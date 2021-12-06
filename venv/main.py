@@ -8,7 +8,6 @@ import pyautogui
 import time
 
 def button_press(button):
-    #button.lower()
     inline_control = pyautogui
     inline_control.press(button)
 
@@ -44,13 +43,14 @@ try:
 
     for element in browser.find_elements_by_id('text-to-type'):
         print('debug0')
-        time.sleep(0.5)
+        print(element.text)
+        text_list = [element.text]
+        test_text = text_list[0]
+        control.press('{}'.format(test_text))
+        print(text_list)
+        print('{}'.format(test_text))
         print('debug1')
-        button_press(element.text)
 
-        #text_to_print = '' + element.text
-        #text_to_print.lower()
-        #control.press(text_to_print)
 
 except NoSuchElementException:
     pass
