@@ -43,8 +43,6 @@ try:
     time.sleep(5)
     control.press('SPACE')
     print(debug)
-    #wait.until(EC.element_to_be_clickable(('/a[contains(text(),"Lessons"]'))).click()
-    #browser.find_element_by_xpath('//a[contains(@href,"#/level/1"]').click()
     print(debug0)
     print(browser.find_elements_by_id('text-to-type'))
     print(debug1)
@@ -53,28 +51,29 @@ try:
     for element in browser.find_elements_by_id('text-to-type'):
         print('debug0')
         print(element.text)
-        text_list = [element.text]
-        testchar = element.text
-        #test_array = numpy.array()
-        #test_text = text_list[0]
+        text = element.text
         print('debug1')
-        print('this is the len: ' + f'{sum(len(i) for i in text_list)}')
-        for it in range(sum(len(j) for j in text_list)):
-            output_list.insert(it,text_list)
-            output_list.remove(text_list)
-
+        print('this is the len: ' + f'{len(text)}')
         print(output_list)
-        print(testchar)
-        testout = list(testchar)
+        print(text)
+        testout = list(text)
         print(testout)
-        print(len(testchar))
-        button_press(testout) #that is working
-        #button_press(text_list)
-        #print('this is the text_list[0]: ' + f'{text_list[0]}')
-        #print(f'{test_text}')
+        print(len(text))
+        #button_press(testout) #that is working
 
 except NoSuchElementException:
     pass
 
 
 # TODO: figure out why all chars are put under [0] adress in text_list
+# CODEGRAVEYARD
+    #button_press(text_list) just testing
+    #print('this is the text_list[0]: ' + f'{text_list[0]}') just testing
+    #print(f'{test_text}') just testing
+    # for it in range(len(text)): medeling with text inside webelement
+        # output_list.insert(it,text) trying to do proper list
+        # output_list.remove(list(text))    trying to remove all unneccessary stuff
+    #wait.until(EC.element_to_be_clickable(('/a[contains(text(),"Lessons"]'))).click() that thing was not able to find element
+    #browser.find_element_by_xpath('//a[contains(@href,"#/level/1"]').click() that was not able to find element
+    # test_array = numpy.array() not the C++ arrays :(
+    # test_text = text_list[0] all the text from web element is out in one single list slot or whatever it is called
