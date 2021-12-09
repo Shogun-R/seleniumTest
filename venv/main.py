@@ -4,14 +4,19 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+import numpy
+import array as arr
 import pyautogui
 import time
 
-def button_press(list = []):
-    total_len = sum(len(i) for i in list)
+def button_press(list):
+    total_len = len(list)
     inline_control = pyautogui
-    for cycle in total_len:
-        button = list[cycle]
+    for press in range(total_len):
+        print(total_len)
+
+    for cycle in range(total_len):
+        button = list[0]
         inline_control.press(button)
 
 
@@ -43,19 +48,33 @@ try:
     print(debug0)
     print(browser.find_elements_by_id('text-to-type'))
     print(debug1)
+    output_list = []
 
     for element in browser.find_elements_by_id('text-to-type'):
         print('debug0')
         print(element.text)
         text_list = [element.text]
-        test_text = text_list[0]
+        testchar = element.text
+        #test_array = numpy.array()
+        #test_text = text_list[0]
         print('debug1')
         print('this is the len: ' + f'{sum(len(i) for i in text_list)}')
-        print('this is the text_list[0]: ' + f'{text_list[0]}')
-        #print(f'{test_text}')
+        for it in range(sum(len(j) for j in text_list)):
+            output_list.insert(it,text_list)
+            output_list.remove(text_list)
 
+        print(output_list)
+        print(testchar)
+        testout = list(testchar)
+        print(testout)
+        print(len(testchar))
+        button_press(testout) #that is working
+        #button_press(text_list)
+        #print('this is the text_list[0]: ' + f'{text_list[0]}')
+        #print(f'{test_text}')
 
 except NoSuchElementException:
     pass
 
 
+# TODO: figure out why all chars are put under [0] adress in text_list
